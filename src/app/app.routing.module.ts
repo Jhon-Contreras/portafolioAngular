@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PortafolioComponent } from "./pages/portafolio/portafolio.component";
 import { AboutComponent } from "./pages/about/about.component";
 import { ItemComponent } from "./pages/item/item.component";
+import { SearchComponent } from "./pages/search/search.component";
 import { SplitInterpolation } from "@angular/compiler";
 // SE CREA UN MODULO PARA EVITAR CARGAR EL APP MODULE
 
@@ -18,8 +19,10 @@ const app_routes: Routes = [
     // para el componente about
     { path: 'about', component: AboutComponent},
 
-    // para mostrar el item
-    { path: 'item', component: ItemComponent},
+    // para mostrar el item enviamos id para productos
+    { path: 'item/:id', component: ItemComponent},
+
+    { path: 'search/:termino', component: SearchComponent},
     // cualquier otra ruta que se ingrese y no sea la de la lista redirecciona al path 'home'
     { path: '**', pathMatch:'full', redirectTo: 'home'},
     

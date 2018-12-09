@@ -34,7 +34,9 @@
   
 
       <!-- se coloca con barra /  -->
-      <a  *ngFor="let producto of productosServices.productos" routerLink="/item" class="rk-item ae-masonry__item">
+
+      <!-- cuando se mandan argumentos hacia un routerlink se pone entre [] para especificarle a angular que se recibiran parametros de forma dinamica -->
+      <a  *ngFor="let producto of productosServices.productos" [routerLink]="['/item', producto.cod]" class="rk-item ae-masonry__item">
         <img src="assets/productos/{{ producto.url}}.jpg" alt="">
         <div class="item-meta">
           <h2>{{producto.titulo}}</h2>
